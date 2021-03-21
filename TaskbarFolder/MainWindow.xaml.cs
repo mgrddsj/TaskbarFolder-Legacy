@@ -35,5 +35,10 @@ namespace TaskbarFolder
 
             Model.TryNavigateToPath(@"C:\Users\Jesse\Downloads");
         }
+
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="720" Width="1280"
-        Style="{DynamicResource CustomWindowStyle}">
+        Style="{DynamicResource CustomWindowStyle}"
+        Deactivated="Window_Deactivated">
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>
