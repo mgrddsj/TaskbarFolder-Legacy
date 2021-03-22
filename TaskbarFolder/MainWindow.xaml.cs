@@ -2,6 +2,7 @@
 using TaskbarFolder.Files;
 using TaskbarFolder.ViewModels;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskbarFolder.Helpers;
 
 namespace TaskbarFolder
 {
@@ -34,8 +36,11 @@ namespace TaskbarFolder
         public MainWindow()
         {
             InitializeComponent();
+            string path = @"C:\Users\Jesse\Downloads";
 
-            Model.TryNavigateToPath(@"C:\Users\Jesse\Downloads");
+            Model.TryNavigateToPath(path);
+            Title = System.IO.Path.GetFileName(path);
+            Icon = IconHelper.GetIconOfFile(path, true, true).ToImageSource();
         }
 
         private void Window_Deactivated(object sender, EventArgs e)
