@@ -23,6 +23,8 @@ namespace TaskbarFolder
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool closing = false;
+
         public MainViewModel Model
         {
             get => this.DataContext as MainViewModel;
@@ -38,7 +40,13 @@ namespace TaskbarFolder
 
         private void Window_Deactivated(object sender, EventArgs e)
         {
-            this.Close();
+            if (!closing)
+                this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            closing = true;
         }
     }
 }
