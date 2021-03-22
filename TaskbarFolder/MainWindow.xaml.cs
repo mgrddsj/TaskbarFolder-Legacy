@@ -41,6 +41,14 @@ namespace TaskbarFolder
             Model.TryNavigateToPath(path);
             Title = System.IO.Path.GetFileName(path);
             Icon = IconHelper.GetIconOfFile(path, true, true).ToImageSource();
+
+            Reposition_Window();
+        }
+
+        private void Reposition_Window()
+        {
+            this.Left = SystemParameters.WorkArea.Left;
+            this.Top = SystemParameters.WorkArea.Top;
         }
 
         private void Window_Deactivated(object sender, EventArgs e)
