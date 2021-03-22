@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TaskbarFolder" 
         xmlns:viewmodels="clr-namespace:TaskbarFolder.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="TaskbarFolder" 
         Height="720" Width="1280"
         Style="{DynamicResource CustomWindowStyle}"
         Deactivated="Window_Deactivated"

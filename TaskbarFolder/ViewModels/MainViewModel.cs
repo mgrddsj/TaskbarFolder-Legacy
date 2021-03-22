@@ -46,13 +46,12 @@ namespace TaskbarFolder.ViewModels
             {
                 ClearFiles();
 
-                foreach(FileModel dir in Fetcher.GetDirectories(path))
-                {
-                    FilesControl fc = CreateFileControl(dir);
-                    AddFile(fc);
-                }
+                List<FileModel> filesAndFolders = Fetcher.GetDirectories(path);
+                filesAndFolders.AddRange(Fetcher.GetFiles(path));
+                filesAndFolders.Sort((x, y) => DateTime.Compare(x.DateModified, y.DateModified));
+                filesAndFolders.Reverse();
 
-                foreach (FileModel file in Fetcher.GetFiles(path))
+                foreach (FileModel file in filesAndFolders)
                 {
                     FilesControl fc = CreateFileControl(file);
                     AddFile(fc);
