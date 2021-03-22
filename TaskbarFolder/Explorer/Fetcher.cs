@@ -36,9 +36,7 @@ namespace TaskbarFolder.Explorer
                             Icon = IconHelper.GetIconOfFile(file, true, false),
                             Name = fInfo.Name,
                             Path = fInfo.FullName,
-                            DateCreated = fInfo.CreationTime,
                             DateModified = fInfo.LastWriteTime,
-                            Type = FileType.File,
                             SizeBytes = fInfo.Length
                         };
 
@@ -94,9 +92,7 @@ namespace TaskbarFolder.Explorer
                         Icon = IconHelper.GetIconOfFile(dir, true, true),
                         Name = dInfo.Name,
                         Path = dInfo.FullName,
-                        DateCreated = dInfo.CreationTime,
                         DateModified = dInfo.LastWriteTime,
-                        Type = FileType.Folder,
                         SizeBytes = long.MaxValue
                     };
 
@@ -115,9 +111,7 @@ namespace TaskbarFolder.Explorer
                             Icon = IconHelper.GetIconOfFile(realDirPath, true, true),
                             Name = dInfo.Name,
                             Path = dInfo.FullName,
-                            DateCreated = dInfo.CreationTime,
                             DateModified = dInfo.LastWriteTime,
-                            Type = FileType.Folder,
                             SizeBytes = 0
                         };
 
@@ -168,7 +162,6 @@ namespace TaskbarFolder.Explorer
                         Name = dInfo.Name,
                         Path = dInfo.Name,
                         DateModified = DateTime.Now,
-                        Type = FileType.Drive,
                         SizeBytes = dInfo.TotalSize
                     };
 
