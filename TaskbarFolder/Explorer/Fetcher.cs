@@ -37,7 +37,7 @@ namespace TaskbarFolder.Explorer
                             Name = fInfo.Name,
                             Path = fInfo.FullName,
                             DateModified = fInfo.LastWriteTime,
-                            SizeBytes = fInfo.Length
+                            SizeBytes = 0 //fInfo.Length
                         };
 
                         files.Add(fModel);
