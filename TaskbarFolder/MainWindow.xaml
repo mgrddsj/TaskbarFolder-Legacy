@@ -16,7 +16,9 @@
     </Window.DataContext>
     <Grid>
         <ListBox ItemsSource="{Binding FileItems, UpdateSourceTrigger=PropertyChanged}"
-                 HorizontalContentAlignment="Stretch" Margin="0,0,0,0"
+                 HorizontalContentAlignment="Stretch" Margin="0,0,0,40"
                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+        <Button Height="40" Margin="0,0,0,0" VerticalAlignment="Bottom"
+                FontSize="16" FontFamily="Microsoft YaHei UI">Open in Explorer</Button>
     </Grid>
 </Window>
