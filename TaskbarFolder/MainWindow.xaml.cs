@@ -90,7 +90,7 @@ namespace TaskbarFolder
                     if (lbHost.Name == "SourceListBox" || lbHost.Name == "TargetListBox")
                         scrollSpeed = 2;
 
-                    double offset = scrollViewer.VerticalOffset - (e.Delta * scrollSpeed/6);
+                    double offset = scrollViewer.VerticalOffset - (e.Delta * scrollSpeed/6) + 1;
                     if (offset < 0)
                         scrollViewer.ScrollToVerticalOffset(0);
                     else if (offset > scrollViewer.ExtentHeight)
@@ -106,6 +106,7 @@ namespace TaskbarFolder
             catch (Exception ex)
             {
                 //Do something...
+                Console.WriteLine(ex.ToString());
             }
         }
     }
