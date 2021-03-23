@@ -46,18 +46,7 @@ namespace TaskbarFolder.ViewModels
 
             else if (path.IsDirectory())
             {
-                ClearFiles();
-
-                List<FileModel> filesAndFolders = Fetcher.GetDirectories(path);
-                filesAndFolders.AddRange(Fetcher.GetFiles(path));
-                filesAndFolders.Sort((x, y) => DateTime.Compare(x.DateModified, y.DateModified));
-                filesAndFolders.Reverse();
-
-                foreach (FileModel file in filesAndFolders)
-                {
-                    FilesControl fc = CreateFileControl(file);
-                    AddFile(fc);
-                }
+                Process.Start(path);
             }
 
             else
@@ -69,6 +58,22 @@ namespace TaskbarFolder.ViewModels
         public void NavigateFromModel(FileModel file)
         {
             TryNavigateToPath(file.Path);
+        }
+
+        public void NavigateOnStartup(string path)
+        {
+            ClearFiles();
+
+            List<FileModel> filesAndFolders = Fetcher.GetDirectories(path);
+            filesAndFolders.AddRange(Fetcher.GetFiles(path));
+            filesAndFolders.Sort((x, y) => DateTime.Compare(x.DateModified, y.DateModified));
+            filesAndFolders.Reverse();
+
+            foreach (FileModel file in filesAndFolders)
+            {
+                FilesControl fc = CreateFileControl(file);
+                AddFile(fc);
+            }
         }
 
         #endregion

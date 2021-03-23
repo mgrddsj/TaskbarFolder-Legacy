@@ -39,7 +39,7 @@ namespace TaskbarFolder
         {
             InitializeComponent();
 
-            Model.TryNavigateToPath(path);
+            Model.NavigateOnStartup(path);
             Title = System.IO.Path.GetFileName(path);
             Icon = IconHelper.GetIconOfFile(path, true, true).ToImageSource();
 
