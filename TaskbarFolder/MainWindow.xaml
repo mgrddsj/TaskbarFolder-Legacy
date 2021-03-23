@@ -7,7 +7,7 @@
         xmlns:viewmodels="clr-namespace:TaskbarFolder.ViewModels"
         mc:Ignorable="d"
         Title="TaskbarFolder" 
-        Height="720" Width="1280"
+        Height="720" Width="400"
         Style="{DynamicResource CustomWindowStyle}"
         Deactivated="Window_Deactivated"
         Closing="Window_Closing">
@@ -15,12 +15,6 @@
         <viewmodels:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <Grid VerticalAlignment="Top" Height="20">
-            <TextBlock Text="" VerticalAlignment="Center" Margin="5,2,0,2" HorizontalAlignment="Left" Width="20"/>
-            <TextBlock Text="File Name" VerticalAlignment="Center" Margin="29,2,410,2"/>
-            <TextBlock Text="Date last Modified" VerticalAlignment="Center" Margin="0,2,156,2" HorizontalAlignment="Right" Width="125" TextAlignment="Center"/>
-            <TextBlock Text="Size" VerticalAlignment="Center" Margin="0,2,7,2" HorizontalAlignment="Right" Width="75" TextAlignment="Center"/>
-        </Grid>
         <ListBox ItemsSource="{Binding FileItems, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalContentAlignment="Stretch" Margin="0,20,0,0"/>
     </Grid>
