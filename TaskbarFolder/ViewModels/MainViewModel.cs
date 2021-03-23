@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Diagnostics;
 
 namespace TaskbarFolder.ViewModels
 {
@@ -39,7 +40,8 @@ namespace TaskbarFolder.ViewModels
             else if (path.IsFile())
             {
                 // Open the file
-                MessageBox.Show($"Opening {path}");
+                // MessageBox.Show($"Opening {path}");
+                Process.Start(path);
             }
 
             else if (path.IsDirectory())
