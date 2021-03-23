@@ -68,7 +68,7 @@ namespace TaskbarFolder
             Process.Start(path);
         }
 
-        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void CommandBinding_Esc(object sender, ExecutedRoutedEventArgs e)
         {
             this.Close();
         }

@@ -18,7 +18,7 @@
         <KeyBinding Command="ApplicationCommands.Close" Key="Esc"/>
     </Window.InputBindings>
     <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Esc"/>
     </Window.CommandBindings>
     <Grid>
         <ListBox ItemsSource="{Binding FileItems, UpdateSourceTrigger=PropertyChanged}"
