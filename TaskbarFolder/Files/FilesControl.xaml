@@ -15,7 +15,7 @@
     <Grid MouseDown="Grid_MouseDown">
         <Grid Background="Transparent">
             <Image Source="{Binding Icon, Converter={StaticResource IconToImageConverter}}" HorizontalAlignment="Left" Width="20" Height="20"/>
-            <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="22,2,405,2"/>
+            <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="22,2,0,2"/>
         </Grid>
     </Grid>
 </UserControl>

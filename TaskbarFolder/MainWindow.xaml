@@ -16,6 +16,7 @@
     </Window.DataContext>
     <Grid>
         <ListBox ItemsSource="{Binding FileItems, UpdateSourceTrigger=PropertyChanged}"
-                 HorizontalContentAlignment="Stretch" Margin="0,0,0,0"/>
+                 HorizontalContentAlignment="Stretch" Margin="0,0,0,0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
     </Grid>
 </Window>
