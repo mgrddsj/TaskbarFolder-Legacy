@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\Scroll.cs" />
     <Compile Include="Converters\FileSizeFormatConverter.cs" />
     <Compile Include="Converters\IconToImageConverter.cs" />
     <Compile Include="Explorer\ExplorerHelpers.cs" />

@@ -23,7 +23,8 @@
     <Grid>
         <ListBox ItemsSource="{Binding FileItems, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalContentAlignment="Stretch" Margin="0,0,0,40"
-                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 PreviewMouseWheel="HandleScrollSpeed"/>
         <Button x:Name="OpenInExplorer" Height="40" Margin="0,0,0,0" VerticalAlignment="Bottom"
                 FontSize="16" FontFamily="Microsoft YaHei UI"
                 Click="OpenInExplorer_Click">
