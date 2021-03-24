@@ -54,8 +54,8 @@ namespace TaskbarFolder
 
         private void Window_Deactivated(object sender, EventArgs e)
         {
-            if (!closing)
-                this.Close();
+            //if (!closing)
+            //    this.Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -73,6 +73,8 @@ namespace TaskbarFolder
             this.Close();
         }
 
+        private double culmulatedScroll = 0;
+
         private void HandleScrollSpeed(object sender, MouseWheelEventArgs e)
         {
             try
@@ -86,18 +88,24 @@ namespace TaskbarFolder
                 if (scrollViewer != null && lbHost != null)
                 {
                     double scrollSpeed = 0.1;
-                    //you may check here your own conditions
-                    if (lbHost.Name == "SourceListBox" || lbHost.Name == "TargetListBox")
-                        scrollSpeed = 2;
-
-                    double offset = scrollViewer.VerticalOffset - (e.Delta * scrollSpeed/6) + 1;
+                    double delta = (e.Delta * scrollSpeed / 6);
+                    if (Math.Abs(delta) > 1)
+                    {
+                        delta = delta > 0 ? 1 : -1;
+                    }
+                    culmulatedScroll += delta;
+                    double offset = scrollViewer.VerticalOffset;
+                    if (Math.Abs(culmulatedScroll) >= 1)
+                    {
+                        offset -= culmulatedScroll > 0 ? culmulatedScroll : -1;
+                        culmulatedScroll = 0;
+                    }
                     if (offset < 0)
                         scrollViewer.ScrollToVerticalOffset(0);
                     else if (offset > scrollViewer.ExtentHeight)
                         scrollViewer.ScrollToVerticalOffset(scrollViewer.ExtentHeight);
                     else
                         scrollViewer.ScrollToVerticalOffset(offset);
-
                     e.Handled = true;
                 }
                 else
